@@ -1,0 +1,109 @@
+{
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[html]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "javascript.format.enable": true,
+  "javascript.autoClosingTags": true,
+  "editor.largeFileOptimizations": false,
+  "editor.mouseWheelZoom": true,
+  "editor.wordWrap": "on",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.jsxBracketSameLine": true,
+  "prettier.singleQuote": true,
+  "git.confirmSync": false,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnType": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "java.project.importHint": false,
+  "terminal.explorerKind": "external",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.shell.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "bash"
+    }
+  },
+  "terminal.integrated.automationShell.linux": "",
+  "terminal.integrated.tabs.enabled": true,
+  "editor.fontFamily": "Menlo, Monaco,Courier New, monospace",
+  "editor.find.cursorMoveOnType": false,
+  "workbench.fontAliasing": "antialiased",
+  "bracketPairColorizer.colorMode": "Independent",
+  "bracketPairColorizer.highlightActiveScope": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": true,
+  "prettier.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 12,
+  "gitlens.hovers.currentLine.over": "line",
+  "editor.minimap.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "git.autofetch": true,
+  "workbench.colorTheme": "Palenight Theme",
+  "workbench.productIconTheme": "feather-vscode",
+  "editor.accessibilitySupport": "off",
+  "eslint.codeActionsOnSave.rules": null,
+  "gitlens.codeLens.dateFormat": "",
+  "cSpell.userWords": [
+    "AMAGI",
+    "applaunch",
+    "astro",
+    "autocapture",
+    "Autotrack",
+    "chromecast",
+    "cloudinary",
+    "conviva",
+    "csai",
+    "ellipsize",
+    "FAIRPLAY",
+    "Favourite",
+    "Favourites",
+    "IMDB",
+    "legendapp",
+    "mediaready",
+    "moti",
+    "Nakama",
+    "Pressable",
+    "primarygenre",
+    "recom",
+    "Routenames",
+    "SSAI",
+    "timespan",
+    "UNFOLLOW",
+    "viewability",
+    "widevine",
+    "zygisk"
+  ],
+  "window.zoomLevel": 2,
+  "notebook.stickyScroll.enabled": true,
+  "[xml]": {
+    "editor.defaultFormatter": "mikeburgh.xml-format"
+  },
+  "git.enableSmartCommit": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "git.replaceTagsWhenPull": true,
+  "diffEditor.hideUnchangedRegions.enabled": true
+}
