@@ -223,32 +223,37 @@ Guardsquare’s **DexGuard** (Android) and **iXGuard** (iOS) deliver enterprise-
 * Premium pricing compared to open-source alternatives
 
 ---
+## 7. 📚 Compliance Overview
 
-## 7. 🧪 Case Study: Mobile Payment App SDK
+Understanding the key security standards that apply to mobile banking and fintech apps helps contextualize the importance of app hardening tools like DexGuard and iXGuard.
 
-### Context:
+### 🔐 PCI-DSS (Payment Card Industry Data Security Standard)
 
-A mobile payment SDK provider needed to meet **PCI Mobile Payment Acceptance (MPoC)** security requirements for SDKs used by banking apps globally.
+* A global standard for securing credit card data.
+* Requires apps to protect stored/transmitted cardholder data, and restrict access to sensitive operations.
+* DexGuard/iXGuard support this by offering **encryption**, **certificate pinning**, **code obfuscation**, and **runtime integrity checks**.
 
-### Challenges:
+### 📲 PCI MPoC (Mobile Payment on COTS)
 
-- Ensure secure SDK integration into 3rd party apps
-- Detect and block reverse engineering and runtime hooking
-- Prove compliance with PCI-DSS and protect APIs used for payment processing
+* Specialized guidelines under PCI-DSS for **mobile payment apps** running on commercial devices.
+* Focuses on mobile app tamper resistance, data protection, runtime protection, and key management.
+* Guardsquare tools align with this via **anti-hooking**, **debugger detection**, **JS obfuscation**, and **telemetry via ThreatCast**.
 
-### DexGuard/iXGuard Benefits:
+### 🧱 OWASP Mobile Top 10
 
-- SDK binaries hardened using **control flow obfuscation**, **string encryption**, and **RASP**
-- Integrated **ThreatCast** for telemetry and attack detection
-- **Certificate pinning** and **hook detection** blocked runtime manipulation
+* A widely adopted list of the most critical mobile app vulnerabilities.
+* DexGuard and iXGuard help mitigate:
 
-### Result:
+  * **M1** – Improper Platform Usage → Root/Jailbreak detection
+  * **M8** – Code Tampering → Integrity validation
+  * **M9** – Reverse Engineering → Obfuscation, encryption, virtualization
+  * **M10** – Hidden Functionality → Symbol stripping, swizzling protection
 
-- Passed PCI audits with reduced manual remediation
-- Adopted by global banks and fintech apps with confidence
-- Zero reverse engineering incidents reported in production
+### 🔏 GDPR / CCPA
 
-➡️ [Read full case study](https://www.guardsquare.com/reports/mobile-payment-app-sdk-company-meets-pci-requirements-with-dexguard-ixguard?sbrc=1qEM3GZeqUFMnRHyVAxc9LA%3D%3D%24Ai8N7H6gxEPUI17NhIdBxA%3D%3D)
+* Data privacy laws in the EU and California respectively.
+* Require strong protection of **PII (Personally Identifiable Information)** and proper breach response.
+* DexGuard/iXGuard reduce PII exposure through encryption, secure runtime, and controlled asset access.
 
 ---
 
@@ -256,36 +261,32 @@ A mobile payment SDK provider needed to meet **PCI Mobile Payment Acceptance (MP
 
 ### 1. [Protecting Mobile KYC](https://www.guardsquare.com/blog/protecting-mobile-kyc)
 
-- Mobile KYC flows are often targeted due to data sensitivity and API credentials
-- DexGuard/iXGuard add runtime defenses (e.g., hook detection, root checks) to protect onboarding processes
-- JS logic is protected through encryption/obfuscation and native-layer shielding
+**Key Insights:**
 
-**Takeaway**: Secure KYC is critical to prevent identity theft and regulatory penalties; app shielding must start early in the user journey.
+* KYC flows are high-value targets for fraud and data theft.
+* Guardsquare provides root/jailbreak detection, hook detection, and obfuscation.
+
+**Takeaway**: Layered protection is critical for secure mobile KYC workflows.
 
 ---
 
 ### 2. [PCI Mobile Payment Compliance](https://www.guardsquare.com/blog/how-guardsquare-helps-apps-comply-pci-mobile-payment-acceptance-security-guidelines)
 
-- Maps how DexGuard/iXGuard features help meet **PCI MPoC** and **PCI DSS** standards:
-  - Strong code obfuscation
-  - Secure storage and transport of data
-  - Prevention of dynamic and static analysis
-- Recommends layered security at build and runtime
+**Key Insights:**
 
-**Takeaway**: Helps streamline PCI audits and prevent expensive compliance remediation later.
+* Guardsquare addresses PCI MPoC via cryptographic protection, anti-debugging, and tamper resistance.
+
+**Takeaway**: DexGuard/iXGuard simplify PCI audit readiness for mobile apps.
 
 ---
 
 ### 3. [OWASP Mobile Top 10](https://www.guardsquare.com/blog/things-every-developer-should-know-about-owasp)
 
-- Explains OWASP Mobile Top 10 risks in developer-friendly terms
-- Maps how Guardsquare protects against major risks like:
-  - M1 (Improper Platform Usage)
-  - M8 (Code Tampering)
-  - M9 (Reverse Engineering)
-  - M10 (Extraneous Functionality)
+**Key Insights:**
 
-**Takeaway**: DexGuard/iXGuard help implement OWASP best practices automatically—ideal for fintech teams.
+* DexGuard/iXGuard mitigate key OWASP risks such as reverse engineering (M9), code tampering (M8), and platform misuse (M1).
+
+**Takeaway**: OWASP-aligned defenses are core to Guardsquare’s approach.
 
 ---
 
