@@ -1,13 +1,25 @@
-# 📄 Deeplink - Mobile App
+# 📄 Deeplink - Banking App - Alcantara
 
+## 📘 Document Info
+
+* **Product Owner:**
+* **Customer Owner:**
+* **Solution Owner:**
+* **Contributors:**
+* **Created On:**
+* **Version:**
+* **Status:**
+
+---
 
 ## 📚 Contents
 
 1. Introduction
-2. Deeplink Supported Screens
-3. Environments
-4. Fallback Scenarios
-5. Salesforce Push Notification Deeplink Handling
+2. Universal Deeplink Configuration
+3. Deeplink Supported Screens
+4. Environments
+5. Fallback Scenarios
+6. Salesforce Push Notification Deeplink Handling
 
 ---
 
@@ -29,13 +41,56 @@ This document outlines the **technical solution for Deeplink features** designed
 
 ---
 
+## 🌐 Universal Deeplink Configuration
+
+To support seamless navigation between external sources (e.g., email links, push notifications) and the banking mobile application, universal deeplinks must be configured properly.
+
+### Android
+
+1. **Intent Filters in AndroidManifest.xml**
+
+```xml
+<intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data
+        android:host="<your-domain>"
+        android:scheme="https" />
+</intent-filter>
+```
+
+2. **App Links Validation**
+
+   * Add your domain and URL patterns to the Digital Asset Links file (`assetlinks.json`) hosted at:
+     `https://<your-domain>/.well-known/assetlinks.json`
+   * Configure Play Console with the same domain and SHA256 certificate fingerprint.
+
+### iOS
+
+1. **Associated Domains in Xcode**
+
+   * Enable Associated Domains capability.
+   * Add the domain in the format:
+     `applinks:<your-domain>`
+
+2. **Apple App Site Association File (AASA)**
+
+   * Host AASA at:
+     `https://<your-domain>/.well-known/apple-app-site-association`
+   * Ensure the file is JSON-formatted and accessible via HTTPS with no redirects.
+
+> Ensure the paths in AASA and assetlinks.json cover all expected deep link structures (e.g., `/etransfer`, `/dashboard`).
+
+---
+
 ## 🔗 Deeplink Supported Screens
 
 * **E-Transfer**
 
 ### E-Transfer
 
-```
+```text
 Deep Link URL: <DomainUrl>/etransfer
 Screen Name: etransfer
 ```
@@ -61,39 +116,11 @@ Screen Name: etransfer
 | Source                              | Fallback Behavior                  |
 | ----------------------------------- | ---------------------------------- |
 | Email Link with Invalid Deep Link   | Opens browser → 404 page           |
-| Push Notification (URL)             | Opens browser → 404 page           |
-| Custom Payload (key=url)            | Opens app → navigates to Dashboard |
+| Salesforce Push Notification (URL)  | Opens browser → 404 page           |
+| Salesforce Custom Payload (key=url) | Opens app → navigates to Dashboard |
 | In-App Notification (Web URL)       | Opens browser → 404 page           |
 
 ### Incorrect Path Parameter or Screen Name
 
-| Scenario                                | Fallback Behavior     |
-| --------------------------------------- | --------------------- |
-| Invalid path, screen, or transaction ID | Navigate to Dashboard |
-
----
-
-## 📩 Salesforce Push Notification Deeplink Handling
-
-1. **Push Notification with Deep Link URL:**
-
-   * **Android:** Clicking the deep link in the notification opens the banking app directly to the target screen.
-   * **iOS:** Opens Safari with the link; the user must tap the "Open App" banner to continue into the app.
-
-2. **Push Notification with Custom Key/Value:**
-
-   * **Key:** `url` (should be handled in app logic)
-   * **Value:** Deep link such as `https://<DomainUrl>/etransfer`
-   * Opens the correct screen in the banking app (Android and iOS) if handled properly in the routing logic.
-
-3. **In-App Notification with Web URL:**
-
-   * **Android:** Directly opens the screen in the app.
-   * **iOS:** Loads the URL in Safari first; "Open App" CTA prompts user to continue to app.
-
-4. **In-App Notification with Custom Payload:**
-
-   * The `url` key must contain a valid deep link
-   * App should be configured to recognize and route based on the payload URL
-
-> ⚠️ If both a Deep Link URL and Custom Payload are present, the Deep Link URL takes priority. It is advised to use only one approach per notification for consistency.
+\| Scenario                                | Fallback Behavior     |
+\|----------------------------------------|
